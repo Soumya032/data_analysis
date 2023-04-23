@@ -53,13 +53,13 @@ else:
     for col in [col for col in df.columns if 'sales_price' in col]:  # creating new columns with high low and medium
         df['models_under_1lakh'] = df[col].apply(lambda x: 50000 <= x <= 100000)
         df['models_under_50k'] = df[col].apply(lambda x: 25000 <= x <= 50000)
-        df[('models_uder_25k')] = df[col].apply(lambda x: x <= 25000)
+        df[('models_under_25k')] = df[col].apply(lambda x: x <= 25000)
 
     # Plot market percentage by brand for phones above 50k, 25k-50k, and under 25k
     st.subheader("Market Percentage")
     market_percentage_1lakh = df.groupby(['brand'])['models_under_1lakh'].sum().sort_values(ascending=False)
     market_percentage_50k = df.groupby(['brand'])['models_under_50k'].sum().sort_values(ascending=False)
-    market_percentage_25k = df.groupby(['brand'])['models_uder_25k'].sum().sort_values(ascending=False)
+    market_percentage_25k = df.groupby(['brand'])['models_under_25k'].sum().sort_values(ascending=False)
 
     st.write("Market Percentage of phones having value more than 1 lakh")
     st.plotly_chart(px.pie(market_percentage_1lakh, values='models_under_1lakh',
