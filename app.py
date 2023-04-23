@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("C:\\Users\\soumy\\OneDrive\\Desktop\\nw\\Flipkart Mobile - 2.csv")
+    df = pd.read_csv("Flipkart Mobile - 2.csv")
     return df
 
 
