@@ -36,7 +36,7 @@ sidebar_choice = st.sidebar.radio("Select a data analysis option", sidebar_optio
 
 # Highest Rated Phones
 if sidebar_choice == "Home":
-    st.title("Mobile Phone Sales Analysis by Group5")
+    st.title("Mobile Phone Sales Analysis")
     st.write("Welcome to the Mobile Phone Sales Analysis Dashboard! Please select an option from the menu on the left to view the corresponding analysis.")
     # Add a horizontal line to separate the content from the group members section
     st.markdown("---")
